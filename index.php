@@ -12,6 +12,14 @@
   <body>
     <div id="content"></div>
 
+    <div class="container-fluid">
+       <div class="row">
+          <div class="span12">
+             <button type="button" id="add_repeat">Add another entry...</button>
+          </div>
+       </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
@@ -22,10 +30,12 @@
     <script>
        var source   = $("#repeat-template").html();
        var template = Handlebars.compile(source);
-       var context  = { repeat_id: 3 };
-       var html     = template(context);
-       $("#content").append(html);
-       $("#content").append(html);
+
+       #("#add_repeat).on('click', function() {
+          var new_repeat_context  = { repeat_id: 0; };
+          var html     = template(new_repeat_context);
+          $("#content").append(html); 
+       });
     </script>
   </body>
 </html>
