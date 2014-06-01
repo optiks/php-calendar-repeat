@@ -32,7 +32,7 @@
        var template = Handlebars.compile(source);
 
        $("#add_repeat").on('click', function() {
-          var new_repeat_context  = { repeat_id: 0; };
+          var new_repeat_context  = { repeat_id: 0 };
           var html     = template(new_repeat_context);
           $("#content").append(html); 
        });
