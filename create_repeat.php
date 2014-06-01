@@ -13,16 +13,16 @@
 
    try {
         $user_id = 1; // TOOO: Get this from the session
-        $duration_id = 1;
-        $repeat_interval = 2;
-        $repeat_on_monday = 1;
-        $repeat_on_tuesday = 0;
-        $repeat_on_wednesday = 1; 
-        $repeat_on_thursday = 1;
-        $repeat_on_friday = 1;
-        $repeat_on_saturday = 0;
-        $repeat_on_sunday = 1;
-        $starts_on = "2013-04-01";
+        $duration_id = 1; // TODO: link to weekly, monthly?
+        $repeat_interval = 1;
+        $repeat_on_monday = $_POST["chk_monday"] ? 1 : 0;
+        $repeat_on_tuesday = $_POST["chk_tuesday"] ? 1 : 0;
+        $repeat_on_wednesday = $_POST["chk_wednesday"] ? 1 : 0; 
+        $repeat_on_thursday = $_POST["chk_thursday"] ? 1 : 0;
+        $repeat_on_friday = $_POST["chk_friday"] ? 1 : 0;
+        $repeat_on_saturday = $_POST["chk_saturday"] ? 1 : 0;
+        $repeat_on_sunday = $_POST["chk_sunday"] ? 1 : 0;
+        $starts_on = $_POST["dt_starts_on"];
 
         $sql_insert = "INSERT INTO `repeat` (user_id, duration_id, repeat_interval, repeat_on_monday, repeat_on_tuesday, repeat_on_wednesday, repeat_on_thursday, repeat_on_friday, repeat_on_saturday, repeat_on_sunday, starts_on) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
