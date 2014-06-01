@@ -1,6 +1,6 @@
 <form action="create_repeat.php" method="post">
    <div class="container-fluid">
-      <div class="row-fluid">
+      <div class="row">
          <div class="span2">Repeats:</div>
          <div class="span10">
             <select>
@@ -12,7 +12,7 @@
          </div>
       </div>
    
-      <div class="row-fluid">
+      <div class="row">
          <div class="span2">Repeat every:</div>
          <div class="span10">
             <select>
@@ -25,7 +25,7 @@
          </div>
       </div>
    
-      <div class="row-fluid">
+      <div class="row">
          <div class="span2">Repeat on:</div>
          <div class="span10">
             <input type="checkbox" name="chk_monday" value="monday"><span>M</span>
@@ -38,21 +38,21 @@
          </div>
       </div>
    
-      <div class="row-fluid">
+      <div class="row">
          <div class="span2">Starts on:</div>
          <div class="span10">
             <input type="date" name="dt_starts_on">
          </div>
       </div>
    
-      <div class="row-fluid">
+      <div class="row">
          <div class="span2">Summary:</div>
          <div class="span10">
             <span>Weekly on Tuesday</span>
          </div>
       </div>
    
-      <div class="row-fluid">
+      <div class="row">
          <div class="span2"></div>
          <div class="span10">
             <button type="submit">Done</button>
