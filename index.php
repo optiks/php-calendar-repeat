@@ -10,9 +10,21 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">    
   </head>
   <body>
-    <?php require_once('repeat_partial.php'); ?>
+    <div id="content"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- UserFrosting is using Handlebars.js -->
+    <script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.3.0.js"></script>
+
+    <?php require_once('templates/repeat.html'); ?>
+    <script>
+       var source   = $("#repeat-template").html();
+       var template = Handlebars.compile(source);
+       var context  = { title: "My New Post", body: "This is my first post!" };
+       var html     = template(context);
+       $("content").append(html);
+    </script>
   </body>
 </html>
