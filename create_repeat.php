@@ -36,7 +36,7 @@
         $stmt->bindValue(8, $repeat_on_friday, PDO::PARAM_BOOL);
         $stmt->bindValue(9, $repeat_on_saturday, PDO::PARAM_BOOL);
         $stmt->bindValue(10, $repeat_on_sunday, PDO::PARAM_BOOL);
-        $stmt->bindValue(11, $starts_on, PDO::PARAM_DATE);
+        $stmt->bindValue(11, $starts_on, PDO::PARAM_STR);
         $stmt->execute();
     }
     catch(Exception $e) {
