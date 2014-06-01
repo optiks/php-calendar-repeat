@@ -34,7 +34,7 @@
             <input type="checkbox" name="chk_thursday" value="thursday"><span>T</span>
             <input type="checkbox" name="chk_friday" value="friday"><span>F</span>
             <input type="checkbox" name="chk_saturday" value="saturday"><span>S</span>
-            <input type="checkbox" name="chk_monday" value="sunday"><span>S</span>     
+            <input type="checkbox" name="chk_sunday" value="sunday"><span>S</span>     
          </div>
       </div>
    

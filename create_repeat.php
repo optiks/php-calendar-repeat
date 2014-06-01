@@ -1,15 +1,6 @@
 <?php
-   $host = "us-cdbr-azure-west-a.cloudapp.net";
-   $user = "b06ad6f8f7d08b";
-   $pwd = "86682b84";
-   $db = "phpcaleAvsfwvgD7";
-   try {
-       $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pwd);
-       $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-   }
-   catch(Exception $e){
-       die(var_dump($e));
-   }
+   include_once('db.php');
+   $conn = createConnection();
 
    try {
         $user_id = 1; // TOOO: Get this from the session
@@ -22,7 +13,7 @@
         $repeat_on_friday = $_POST["chk_friday"] ? 1 : 0;
         $repeat_on_saturday = $_POST["chk_saturday"] ? 1 : 0;
         $repeat_on_sunday = $_POST["chk_sunday"] ? 1 : 0;
-        $starts_on = $_POST["dt_starts_on"];
+        $starts_on = $_POST["dt_starts_on"] ?: date('Y-m-d');
 
         $sql_insert = "INSERT INTO `repeat` (user_id, duration_id, repeat_interval, repeat_on_monday, repeat_on_tuesday, repeat_on_wednesday, repeat_on_thursday, repeat_on_friday, repeat_on_saturday, repeat_on_sunday, starts_on) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
