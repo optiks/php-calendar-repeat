@@ -26,15 +26,20 @@
 
     <?php require_once("templates/repeat.html"); ?>
     <script>
+        // Convert form data to JSON
+        $.fn.serializeObject=function(){var a={},b=this.serializeArray();return $.each(b,function(){void 0!==a[this.name]?(a[this.name].push||(a[this.name]=[a[this.name]]),a[this.name].push(this.value||"")):a[this.name]=this.value||""}),a};
+
        var source   = $("#repeat-template").html();
        var template = Handlebars.compile(source);
 
        $("#add_repeat").on("click", function() {
           var new_repeat_context  = { repeat_id: 0 };
-          var html                = template(new_repeat_context);
-          var formElement         = $("#content").append(html);
-          formElement.on("submit", function(e) {
+          var html                = $(template(new_repeat_context));
+          $("#content").append(html);
+          html.on("submit", function(e) {
              e.preventDefault();
+             
+             var data = $(e.target).serializeObject();
              alert("submitted");
           }); 
        });

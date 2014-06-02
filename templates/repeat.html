@@ -1,3 +1,5 @@
+repeat_interval | repeat_on_monday | repeat_on_tuesday | repeat_on_wednesday | repeat_on_thursday | repeat_on_friday | repeat_on_saturday | repeat_on_sunday | starts_on
+
 <script id="repeat-template" type="text/x-handlebars-template">
    <form method="POST" class="form-horizontal">
       <input type="hidden" id="repeat_id" name="repeat_id" value="{{repeat_id}}" />
@@ -5,7 +7,7 @@
       <div class="control-group">
          <label for="sel_repeats" class="control-label">Repeats:</label>
          <div class="controls">
-            <select name="sel_repeats">
+            <select name="duration">
                <option value="daily">Daily</option>
                <option value="weekly">Weekly</option>
                <option value="monthly">Monthly</option>
@@ -15,9 +17,9 @@
       </div>
 
       <div class="control-group">
-         <label for="sel_repeat_every" class="control-label">Repeat every:</label>
+         <label for="repeat_interval" class="control-label">Repeat every:</label>
          <div class="controls">
-            <select name="sel_repeat_every">
+            <select name="repeat_interval">
                <option value="1">1</option>
                <option value="2">2</option>
                <option value="3">3</option>
@@ -28,22 +30,22 @@
       </div>
 
       <div class="control-group">
-         <label for="repeat_on" class="control-label">Repeat on:</label>
+         <label for="" class="control-label">Repeat on:</label>
          <div class="controls">
-            <input type="checkbox" name="chk_monday" value="monday"><span>M</span>
-            <input type="checkbox" name="chk_tuesday" value="tuesday"><span>T</span>
-            <input type="checkbox" name="chk_wednesday" value="wednesday"><span>W</span>
-            <input type="checkbox" name="chk_thursday" value="thursday"><span>T</span>
-            <input type="checkbox" name="chk_friday" value="friday"><span>F</span>
-            <input type="checkbox" name="chk_saturday" value="saturday"><span>S</span>
-            <input type="checkbox" name="chk_sunday" value="sunday"><span>S</span>
+            <input type="checkbox" name="repeat_on_monday" value="monday"><span>M</span>
+            <input type="checkbox" name="repeat_on_tuesday" value="tuesday"><span>T</span>
+            <input type="checkbox" name="repeat_on_wednesday" value="wednesday"><span>W</span>
+            <input type="checkbox" name="repeat_on_thursday" value="thursday"><span>T</span>
+            <input type="checkbox" name="repeat_on_friday" value="friday"><span>F</span>
+            <input type="checkbox" name="repeat_on_saturday" value="saturday"><span>S</span>
+            <input type="checkbox" name="repeat_on_sunday" value="sunday"><span>S</span>
          </div>
       </div>
 
       <div class="control-group">
-         <label for="dt_starts_on" class="control-label">Starts on:</label>
+         <label for="starts_on" class="control-label">Starts on:</label>
          <div class="controls">
-            <input type="date" name="dt_starts_on">
+            <input type="date" name="starts_on">
          </div>
       </div>
 
