@@ -14,7 +14,7 @@
 
     <div class="container">
        <div class="control-group">
-          <button name="add" type="button" class="btn btn-primary">Add another entry...</button>
+          <button id="add_repeat" type="button" class="btn btn-primary">Add another entry...</button>
         </div>
     </div>
 
