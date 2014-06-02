@@ -40,7 +40,9 @@
              e.preventDefault();
              
              var data = $(e.target).serializeObject();
-             alert("submitted");
+             $.post("api/create_repeat.php", data)
+              .done(function() { alert("success"); })
+              .fail(function() { alert("fail"); });
           }); 
        });
     </script>
