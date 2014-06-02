@@ -53,7 +53,7 @@
         .done(function(data) {
            $.each(data, function() {
               addRepeatInstance(this);
-           );
+           });
        });
     </script>
   </body>
