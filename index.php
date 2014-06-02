@@ -12,12 +12,10 @@
   <body>
     <div id="content"></div>
 
-    <div class="container-fluid">
-       <div class="row">
-          <div class="span12">
-             <button type="button" id="add_repeat">Add another entry...</button>
-          </div>
-       </div>
+    <div class="container">
+       <div class="control-group">
+          <button name="add" type="button" class="btn btn-primary">Add another entry...</button>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -26,15 +24,19 @@
     <!-- UserFrosting is using Handlebars.js -->
     <script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.3.0.js"></script>
 
-    <?php require_once('templates/repeat.html'); ?>
+    <?php require_once("templates/repeat.html"); ?>
     <script>
        var source   = $("#repeat-template").html();
        var template = Handlebars.compile(source);
 
-       $("#add_repeat").on('click', function() {
+       $("#add_repeat").on("click", function() {
           var new_repeat_context  = { repeat_id: 0 };
           var html     = template(new_repeat_context);
-          $("#content").append(html); 
+          $("#content").append(html);
+          $(html).on("submit", function(e) {
+             e.preventDefault();
+             alert("submitted");
+          }); 
        });
     </script>
   </body>
