@@ -29,6 +29,10 @@
         // Convert form data to JSON
         $.fn.serializeObject=function(){var a={},b=this.serializeArray();return $.each(b,function(){void 0!==a[this.name]?(a[this.name].push||(a[this.name]=[a[this.name]]),a[this.name].push(this.value||"")):a[this.name]=this.value||""}),a};
 
+        Handlebars.registerHelper('checked', function(currentValue) {
+           return currentValue == "1" ? ' checked="checked"' : "";
+        });
+
        var source   = $("#repeat-template").html();
        var template = Handlebars.compile(source);
        var addRepeatInstance = function (context) {
