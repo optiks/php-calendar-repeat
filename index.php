@@ -40,13 +40,13 @@
              e.preventDefault();
              
              var data = $(e.target).serializeObject();
-             $.post("api/create_repeat.php", data)
+             $.post("api/repeat/create.php", data)
               .done(function() { alert("success"); })
               .fail(function() { alert("fail"); });
           }); 
        });
 
-       $.get("api/list_repeat.php")
+       $.get("api/repeat/list.php")
         .done(function(data) {
            alert( "Data Loaded: " + data );
        });
