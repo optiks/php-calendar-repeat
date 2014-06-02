@@ -31,9 +31,9 @@
 
        $("#add_repeat").on("click", function() {
           var new_repeat_context  = { repeat_id: 0 };
-          var html     = template(new_repeat_context);
-          $("#content").append(html);
-          $(html).on("submit", function(e) {
+          var html                = template(new_repeat_context);
+          var formElement         = $("#content").append(html);
+          formElement.on("submit", function(e) {
              e.preventDefault();
              alert("submitted");
           }); 
