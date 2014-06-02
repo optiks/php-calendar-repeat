@@ -31,24 +31,29 @@
 
        var source   = $("#repeat-template").html();
        var template = Handlebars.compile(source);
-
-       $("#add_repeat").on("click", function() {
-          var new_repeat_context  = { repeat_id: 0 };
-          var html                = $(template(new_repeat_context));
+       var addRepeatInstance = function (context) {
+          var html  = $(template(context));
           $("#content").append(html);
           html.on("submit", function(e) {
              e.preventDefault();
-             
+
              var data = $(e.target).serializeObject();
              $.post("api/repeat/create.php", data)
-              .done(function() { alert("success"); })
-              .fail(function() { alert("fail"); });
-          }); 
+              .done(function() { /* show success */ })
+              .fail(function() { /* show failure */ });
+          });
+       };
+
+       $("#add_repeat").on("click", function() {
+          var context  = { repeat_id: 0 };
+          addRepeatInstance(context);
        });
 
        $.get("api/repeat/list.php")
         .done(function(data) {
-           alert( "Data Loaded: " + data );
+           $.each(data, function() {
+              addRepeatInstance(this);
+           );
        });
     </script>
   </body>
