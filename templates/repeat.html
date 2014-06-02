@@ -3,7 +3,7 @@
       <input type="hidden" id="repeat_id" name="repeat_id" value="{{repeat_id}}" />
 
       <div class="control-group">
-         <label for="sel_repeats" class="control-label">Repeats:</label>
+         <label for="duration" class="control-label">Repeats:</label>
          <div class="controls">
             <select name="duration">
                <option value="daily">Daily</option>
@@ -50,7 +50,7 @@
       <div class="control-group">
          <label for="" class="control-label">Summary:</label>
          <div class="controls">
-            <span>Weekly on Tuesday</span>
+            <span>{{repeat_id}} {{duration}} {{repeat_interval}} {{repeat_on_monday}} {{starts_on}}</span>
          </div>
       </div>
 
