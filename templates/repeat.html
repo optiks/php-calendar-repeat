@@ -31,19 +31,19 @@
          <label for="" class="control-label">Repeat on:</label>
          <div class="controls">
             <input type="checkbox" name="repeat_on_monday" value="monday" {{checked repeat_on_monday}}><span>M</span>
-            <input type="checkbox" name="repeat_on_tuesday" value="tuesday"><span>T</span>
-            <input type="checkbox" name="repeat_on_wednesday" value="wednesday"><span>W</span>
-            <input type="checkbox" name="repeat_on_thursday" value="thursday"><span>T</span>
-            <input type="checkbox" name="repeat_on_friday" value="friday"><span>F</span>
-            <input type="checkbox" name="repeat_on_saturday" value="saturday"><span>S</span>
-            <input type="checkbox" name="repeat_on_sunday" value="sunday"><span>S</span>
+            <input type="checkbox" name="repeat_on_tuesday" value="tuesday" {{checked repeat_on_tuesday}}><span>T</span>
+            <input type="checkbox" name="repeat_on_wednesday" value="wednesday" {{checked repeat_on_wednesday}}><span>W</span>
+            <input type="checkbox" name="repeat_on_thursday" value="thursday" {{checked repeat_on_thursday}}><span>T</span>
+            <input type="checkbox" name="repeat_on_friday" value="friday" {{checked repeat_on_friday}}><span>F</span>
+            <input type="checkbox" name="repeat_on_saturday" value="saturday" {{checked repeat_on_saturday}}><span>S</span>
+            <input type="checkbox" name="repeat_on_sunday" value="sunday" {{checked repeat_on_sonday}}><span>S</span>
          </div>
       </div>
 
       <div class="control-group">
          <label for="starts_on" class="control-label">Starts on:</label>
          <div class="controls">
-            <input type="date" name="starts_on">
+            <input type="date" name="starts_on" value="{{starts_on}}">
          </div>
       </div>
 
