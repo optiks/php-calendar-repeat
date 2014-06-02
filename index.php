@@ -45,6 +45,11 @@
               .fail(function() { alert("fail"); });
           }); 
        });
+
+       $.get("api/list_repeat.php")
+        .done(function(data) {
+           alert( "Data Loaded: " + data );
+       });
     </script>
   </body>
 </html>
