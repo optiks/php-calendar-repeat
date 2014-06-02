@@ -51,7 +51,7 @@
 
        $.get("api/repeat/list.php")
         .done(function(data) {
-           $.each(data, function() {
+           $.each(JSON.parse(data), function() {
               addRepeatInstance(this);
            });
        });
